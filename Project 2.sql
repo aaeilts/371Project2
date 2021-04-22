@@ -3,19 +3,22 @@ USE Project2;
 SET SQL_SAFE_UPDATES = 0;
 
 CREATE TABLE IF NOT EXISTS Advertisements
-(Advertisement_ID VARCHAR(4),
+(Advertisement_ID SMALLINT unsigned,
 Adv_Title VARCHAR(30),
 Adv_Deets VARCHAR(100),
-Adv_DateTime datetime, 
-Price float(2),
+Adv_DateTime DATETIME, 
+Price FLOAT(5,2),
 User_ID VARCHAR(15),
 Moderator_ID VARCHAR(15),
 Category_ID VARCHAR(15),
 Status_ID VARCHAR(2)
+
+CONSTRAINT PK_ADVERT PRIMARY KEY (Advertisement_ID),
+
 );
 
 CREATE TABLE IF NOT EXISTS Categories
-(Category_ID VARCHAR(3),
+(Category_ID VARCHAR (3),
 Cat_Name VARCHAR(15)
 );
 
@@ -25,13 +28,13 @@ Status_Name VARCHAR(15)
 );
 
 CREATE TABLE IF NOT EXISTS Users
-(User_ID VARCHAR(3),
+(User_ID SMALLINT unsigned,
 UserFirstName VARCHAR(10),
 UserLastName VARCHAR(10)
 );
 
 CREATE TABLE IF NOT EXISTS Moderators
-(User_ID VARCHAR(3)
+(User_ID SMALLINT unsigned
 );
 
 
